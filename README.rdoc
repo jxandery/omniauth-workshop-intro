@@ -1,28 +1,21 @@
-== README
+This application is built using a Turing School tutorial, [Tutorial: Getting Started With OAuth](https://github.com/turingschool/lesson_plans/blob/master/ruby_03-professional_rails_applications/getting_started_with_oauth.markdown)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This tutorial covered the basics of setting up a rails app that authenticates with OAuth. The steps included:
+1. Setting up an application account with an external OAuth provider
+2. Using the OmniAuth gem to incorporate the OAuth protocol flow into your application
+3. Handling the OAuth callback and capturing identification details in our own application's database
+4. Testing OAuth using OmniAuth's provided mocking system
 
-Things you may want to cover:
+Resources for further study include:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+- [OAuth on Wikipedia](https://en.wikipedia.org/wiki/OAuth)
+- [Understanding OAuth on LifeHacker](http://lifehacker.com/5918086/understanding-oauth-what-happens-when-you-log-into-a-site-with-google-twitter-or-facebook)
+- [OmniAuth for integration in Ruby web apps](https://github.com/intridea/omniauth)
+- [Oauth 1.0 Diagram (from MashApe's oauth bible)](http://puu.sh/2pJ4y)
+- [Oauth Bible - lots of in-depth info about different oauth versions and components](http://oauthbible.com/)
+- [Edge Cases Podcast #36 - Good in-depth discussion of the evolution of Oauth and the pros and cons of using it.](http://edgecasesshow.com/036-zenos-paradox-of-authentication.html)
+- [Doorkeeper -- Oauth provider gem](https://github.com/doorkeeper-gem/doorkeeper)
+- [OmniAuth core API documentation](https://github.com/intridea/omniauth)
+- [OmniAuth wiki](https://github.com/intridea/omniauth/wiki)
+- [A Devise and OmniAuth powered Single-Sign-On implementation](https://github.com/joshsoftware/sso-devise-omniauth-provider)
+- [RailsCast on combining Devise and OmniAuth](http://asciicasts.com/episodes/236-omniauth-part-2)
