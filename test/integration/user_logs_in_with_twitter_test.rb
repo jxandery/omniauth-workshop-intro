@@ -5,6 +5,7 @@ class UserLogsInWithTwitterTest < ActionDispatch::IntegrationTest
 
   def setup
     Capybara.app = OauthWorkshop::Application
+    stub_omniauth
   end
 
   test "logging in" do
@@ -15,5 +16,26 @@ class UserLogsInWithTwitterTest < ActionDispatch::IntegrationTest
     assert_equal "/", current_path
     assert page.has_content?("Jack")
     assert page.has_link?("logout")
+  end
+
+  def stub_omniauth
+    # first, set OmniAuth to run in test mode
+    OmniAuth.config.test_mode = true
+    # then, provide a set of fake oauth data that
+    # omniauth will use when a user tries to authenticate:
+    OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
+      provider: 'twitter',
+      extra: {
+        raw_info: {
+          user_id: "1643785932",
+          name: "Jack Yeh",
+          screen_name: "tinyhousejack",
+        }
+      },
+      credentials: {
+        token: "pizza",
+        secret: "secretpizza"
+      }
+    })
   end
 end
