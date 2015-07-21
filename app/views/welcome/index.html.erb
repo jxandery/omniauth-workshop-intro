@@ -1,7 +1,18 @@
-<h2>Welcome!</h1>
+<h1>Welcome!</h1>
+
+<h3>Your Twitter Timeline</h3>
+
 
 <% if current_user %>
   <p>hello, <%= current_user.name %></p>
+  <h3>Your Twitter Timeline</h3>
+  <ul>
+    <% current_user.twitter_timeline.each do |tweet| %>
+      <p><%= distance_of_time_in_words(Time.now, tweet.created_at) %> ago, <%= tweet.user.screen_name %> said: </p>
+      <p><%= link_to tweet.text %></p>
+    <% end %>
+  </ul></br>
+
   <%= link_to "logout", logout_path %>
 <% else %>
   <%= link_to "login", login_path %>
