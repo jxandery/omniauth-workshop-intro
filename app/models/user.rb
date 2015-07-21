@@ -12,4 +12,17 @@ class User < ActiveRecord::Base
       })
     end
   end
+
+  def twitter_client
+    @client ||= Twitter::REST::Client.new do |config|
+      config.consumer_key = ENV["twitter_key"]
+      config.consumer_secret = ENV["twitter_secret"]
+      config.access_token = oauth_token
+      config.access_token_secret = oauth_token_secret
+    end
+  end
+
+  def twitter_timeline
+    twitter_client.home_timeline
+  end
 end
